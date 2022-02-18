@@ -1,1 +1,11 @@
 /* add home page styles here */
+.post {
+    color: #000;
+    background: var(--color-yellow);
+    height: 10em;
+    width: 10em;
+    padding: 1em;
+    box-shadow: 5px 5px 7px rgb(33 33 33 / 70%);
+    margin: 10px;
+}
+

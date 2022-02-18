@@ -1,0 +1,12 @@
+body{
+    background-image: url('../assets/background.jpg');
+}
+form {
+    display: flex;
+    flex-direction: column;
+    background:plum;
+    padding: 1em;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.7);
+    margin: 10px;
+}
+

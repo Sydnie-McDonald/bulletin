@@ -1,17 +1,31 @@
-// import functions and grab DOM elements
-import { redirectIfLoggedIn, signupUser } from './fetch-utils.js';
-// grab my DOM elements and where I am updating to the html
-const signUpForm = document.getElementById('sign-up');
-const signUpEmail = document.getElementById('sign-up-email');
-const signUpPassword = document.getElementById('sign-up-password');
-redirectIfLoggedIn();
+import { getPosts, getUser, logout } from './fetch-utils.js';
+import { renderPost } from './render.js';
+const bulletin = document.getElementById('bulletin-board');
+const authButton = document.getElementById('auth-button');
+const createButton = document.getElementById('create');
 
-signUpForm.addEventListener('submit', async (e) => {
-    // prevents the default action when a link is clicked, page refresh 
-    e.preventDefault();
-    // grab the email value and password value
-    await signupUser(signUpEmail.value, signUpPassword.value);
-    // run redirect if logged in to make sure the user is verified and log them in redirect to other page
-    redirectIfLoggedIn();
 
+// if user currently logged in, redirect
+window.addEventListener('load', async () => {
+    const user = await getUser();
+
+    if (user) {
+        authButton.addEventListener('click', logout);
+        authButton.textContent = 'Logout';
+    } else {
+        authButton.addEventListener('click', () => {
+            location.replace('/auth');
+        });
+        authButton.textContent = 'Login';
+    }
+
+    createButton.addEventListener('click', () => {
+        location.replace('/create');
+    });
+
+    const posts = await getPosts();
+    for (let post of posts) {
+        const postDiv = renderPost(post);
+        bulletin.append(postDiv);
+    }
 });

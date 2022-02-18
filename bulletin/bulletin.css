@@ -1,0 +1,10 @@
+body{
+    background-image: url('../assets/background.jpg');
+}
+header{
+    display:flex;
+    background-color: blueviolet;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 10px;
+}
