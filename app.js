@@ -1,5 +1,5 @@
 import { getPosts, getUser, logout } from './fetch-utils.js';
-import { renderPost } from './render.js';
+import { renderPosts } from './render.js';
 
 const bulletinBoard = document.getElementById('bulletin-board');
 const loginButton = document.getElementById('login');
@@ -25,7 +25,7 @@ window.addEventListener('load', async () => {
 
     const posts = await getPosts();
     for (let post of posts) {
-        const postDiv = renderPost(post);
+        const postDiv = renderPosts(post);
         bulletinBoard.append(postDiv);
     }
 });
