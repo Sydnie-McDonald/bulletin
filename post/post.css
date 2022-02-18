@@ -6,4 +6,12 @@
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.7);
     margin: 10px;
 }
-
+.post {
+    color: #000;
+    background: var(--color-yellow);
+    height: 10em;
+    width: 10em;
+    padding: 1em;
+    box-shadow: 5px 5px 7px rgb(33 33 33 / 70%);
+    margin: 10px;
+}

@@ -22,5 +22,5 @@ postForm.addEventListener('submit', async (e) => {
         content: data.get('content'),
         contact: data.get('contact'),
     });
-    // location.replace('/post');
+    location.replace('/');
 });

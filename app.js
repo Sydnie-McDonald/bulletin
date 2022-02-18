@@ -24,6 +24,7 @@ window.addEventListener('load', async () => {
     });
 
     const posts = await getPosts();
+    console.log(posts);
     for (let post of posts) {
         const postDiv = renderPosts(post);
         bulletinBoard.append(postDiv);
