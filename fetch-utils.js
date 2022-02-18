@@ -11,7 +11,7 @@ export async function getUser() {
 export async function checkAuth() {
     const user = await getUser();
 
-    if (!user) location.replace('/auth');
+    if (!user) location.replace('/authenticate');
 }
 
 export async function redirectIfLoggedIn() {

@@ -54,6 +54,7 @@ section {
 }
 
 header {
+    margin:20px;
     display: flex;
     justify-content: flex-end;
     background-color: var(--color3);

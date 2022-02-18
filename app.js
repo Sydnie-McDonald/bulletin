@@ -1,26 +1,26 @@
 import { getPosts, getUser, logout } from './fetch-utils.js';
 import { renderPost } from './render.js';
-const bulletin = document.getElementById('bulletin-board');
-const authButton = document.getElementById('auth-button');
-const createButton = document.getElementById('create');
 
+const bulletin = document.getElementById('bulletin-board');
+const loginButton = document.getElementById('login');
+const postButton = document.getElementById('post');
 
 // if user currently logged in, redirect
 window.addEventListener('load', async () => {
     const user = await getUser();
 
     if (user) {
-        authButton.addEventListener('click', logout);
-        authButton.textContent = 'Logout';
+        loginButton.addEventListener('click', logout);
+        loginButton.textContent = 'Logout';
     } else {
-        authButton.addEventListener('click', () => {
-            location.replace('/auth');
+        loginButton.addEventListener('click', () => {
+            location.replace('/authenticate');
         });
-        authButton.textContent = 'Login';
+        loginButton.textContent = 'Login';
     }
 
-    createButton.addEventListener('click', () => {
-        location.replace('/create');
+    postButton.addEventListener('click', () => {
+        location.replace('/post');
     });
 
     const posts = await getPosts();
