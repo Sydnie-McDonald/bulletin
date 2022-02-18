@@ -11,12 +11,12 @@ export async function getUser() {
 export async function checkAuth() {
     const user = await getUser();
 
-    if (!user) location.replace('/authenticate');
+    if (!user) location.replace('../authenticate');
 }
 
 export async function redirectIfLoggedIn() {
     if (await getUser()) {
-        location.replace('/');
+        location.replace('../post');
     }
 }
 

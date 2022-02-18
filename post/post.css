@@ -1,7 +1,4 @@
-body{
-    background-image: url('../assets/background.jpg');
-}
-form {
+#post-form {
     display: flex;
     flex-direction: column;
     background:plum;

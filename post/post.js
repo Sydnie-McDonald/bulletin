@@ -17,6 +17,7 @@ const postForm = document.getElementById('post-form');
 postForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(postForm);
+    console.log(data);
     await createPost({
         title: data.get('title'),
         content: data.get('content'),
