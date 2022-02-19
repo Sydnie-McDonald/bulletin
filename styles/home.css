@@ -1,1 +1,22 @@
 /* add home page styles here */
+
+header{
+    display:flex;
+    background-color: blueviolet;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 25px;
+}
+#bulletin-board {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    background-image: url(../assets/background.jpg);
+    height: 75vh;
+    width: 75vw;
+    border: 10px solid black;
+    min-width: calc(10em + 40px);
+    overflow: scroll;
+}
